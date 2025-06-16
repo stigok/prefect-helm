@@ -207,7 +207,7 @@ the HorizontalPodAutoscaler.
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | common | 2.31.1 |
+| https://charts.bitnami.com/bitnami | common | 2.31.3 |
 | https://charts.bitnami.com/bitnami | postgresql | 12.12.10 |
 
 ## Values
@@ -301,6 +301,7 @@ the HorizontalPodAutoscaler.
 | server.containerSecurityContext.runAsNonRoot | bool | `true` | set server containers' security context runAsNonRoot |
 | server.containerSecurityContext.runAsUser | int | `1001` | set server containers' security context runAsUser |
 | server.debug | bool | `false` | sets PREFECT_DEBUG_MODE |
+| server.deploymentStrategyType | string | `"RollingUpdate"` | The type of deployment strategy, can be "Recreate" or RollingUpdate". Setting this to "Recreate" is useful when database is on a mounted volume that can only be attached to a single node at a time. |
 | server.env | list | `[]` | array with environment variables to add to server deployment |
 | server.extraArgs | list | `[]` | array with extra Arguments for the server container to start with |
 | server.extraContainers | list | `[]` | additional sidecar containers |
